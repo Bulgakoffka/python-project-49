@@ -56,7 +56,7 @@ def randmath():
                     win_count = 0
                     break
             case 2:
-                print('Question: ' + f' {a} - {b}')
+                print('Question: ' + f'{a} - {b}')
                 answer = input('Your answer: ')
                 try:
                     if int(answer) == int(minus(a, b)):
