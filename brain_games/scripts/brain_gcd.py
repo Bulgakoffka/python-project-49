@@ -32,10 +32,15 @@ def nod():
         a, b = randnumber(), randnumber()
         print(f'Question: {a} {b}')
         answer = input('Your answer: ')
-        if int(answer) == int(calc(a, b)):
-            print('Correct!')
-            win_count += 1
-        else:
+        try:
+            if int(answer) == int(calc(a, b)):
+                print('Correct!')
+                win_count += 1
+            else:
+                print(f"'{answer}' is wrong answer ;(. Correct answer was '{calc(a, b)}'. \n Let's try again, {user_name}!")
+                win_count = 0
+                break
+        except:
             print(f"'{answer}' is wrong answer ;(. Correct answer was '{calc(a, b)}'. \n Let's try again, {user_name}!")
             win_count = 0
             break

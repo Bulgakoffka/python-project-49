@@ -1,10 +1,13 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "just a couple of games in your terminal"
 authors = ["Stephen <146680209+Bulgakoffka@users.noreply.github.com>"]
 readme = "README.md"
-
+repository = "https://github.com/Bulgakoffka/python-project-49"
+classifiers = [
+  "Environment :: Console"
+]
 packages = [
   { include = "brain_games" },
 ]
@@ -18,6 +21,8 @@ brain-games = "brain_games.scripts.brain_games:main"
 brain-even = "brain_games.scripts.brain_even:main"
 brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
+brain-progression = "brain_games.scripts.brain_progression:main"
+brain-prime = "brain_games.scripts.brain_prime:main"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.1.0"

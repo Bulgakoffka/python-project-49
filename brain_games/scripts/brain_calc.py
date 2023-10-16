@@ -42,31 +42,46 @@ def randmath():
             case 1:
                 print('Question: ' + f' {a} * {b}')
                 answer = input('Your answer: ')
-                if int(answer) == int(umnozhenie(a, b)):
-                    print('Correct!')
-                    win_count += 1
-                else:
-                    print(f"'{answer}' is wrong answer ;(. Correct answer was '{umnozhenie(a, b)}'. Let's try again, {user_name}!")
+                try:
+                    if int(answer) == int(umnozhenie(a, b)):
+                        print('Correct!')
+                        win_count += 1
+                    else:
+                        print(f"'{answer}' is wrong answer ;(. Correct answer was '{umnozhenie(a, b)}'. Let's try again, {user_name}!")
+                        break
+                except:
+                    print(f"'{answer}' is wrong answer ;(. Correct answer was '{umnozhenie(a, b)}'. \n Let's try again, {user_name}!")
+                    win_count = 0
                     break
             case 2:
                 print('Question: ' + f' {a} - {b}')
                 answer = input('Your answer: ')
-                if int(answer) == int(minus(a, b)):
-                    print('Correct!')
-                    win_count += 1
-                else:
-                    print(
-                        f"'{answer}' is wrong answer ;(. Correct answer was '{minus(a, b)}'. Let's try again, {user_name}!")
+                try:
+                    if int(answer) == int(minus(a, b)):
+                        print('Correct!')
+                        win_count += 1
+                    else:
+                        print(
+                            f"'{answer}' is wrong answer ;(. Correct answer was '{minus(a, b)}'. Let's try again, {user_name}!")
+                        break
+                except:
+                    print(f"'{answer}' is wrong answer ;(. Correct answer was '{minus(a, b)}'. \n Let's try again, {user_name}!")
+                    win_count = 0
                     break
             case 3:
                 print('Question: ' + f' {a} + {b}')
                 answer = input('Your answer: ')
-                if int(answer) == int(plus(a, b)):
-                    print('Correct!')
-                    win_count += 1
-                else:
-                    print(
-                        f"'{answer}' is wrong answer ;(. Correct answer was '{plus(a, b)}'. Let's try again, {user_name}!")
+                try:    
+                    if int(answer) == int(plus(a, b)):
+                        print('Correct!')
+                        win_count += 1
+                    else:
+                        print(
+                            f"'{answer}' is wrong answer ;(. Correct answer was '{plus(a, b)}'. Let's try again, {user_name}!")
+                        break
+                except:
+                    print(f"'{answer}' is wrong answer ;(. Correct answer was '{plus(a, b)}'. \n Let's try again, {user_name}!")
+                    win_count = 0
                     break
 
 

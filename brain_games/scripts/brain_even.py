@@ -13,9 +13,10 @@ def check(number):
 
 def is_even():
     win_count = 0
-    while win_count != 3:
+    while win_count != 4:
+        if win_count == 3:
+            print('Congratulations, ' + user_name)
         number = randint(1, 30)
-        print('Answer "yes" if the number is even, otherwise answer "no".')
         print('Question: ' + str(number))
         guess_answer = input('Your answer: ')
         if guess_answer == 'yes':
@@ -35,11 +36,10 @@ def is_even():
         if guess_answer != 'yes' and guess_answer != 'no':
             print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
             win_count = 0
-        if win_count == 3:
-            print('Congratulations, ' + user_name)
 
 def main():
-    is_even()
+     print('Answer "yes" if the number is even, otherwise answer "no".')
+     is_even()
 
 
 if __name__ == '__main__':
