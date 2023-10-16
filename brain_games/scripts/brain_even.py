@@ -30,6 +30,7 @@ def is_even():
             else:
                 print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
                 win_count = 0
+                break
         if guess_answer == 'no':
             if number % 2 != 0:
                 print('Correct!')
