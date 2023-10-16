@@ -42,7 +42,7 @@ def randmath():
             break
         match choice:
             case 1:
-                print('Question: ' + f' {a} * {b}')
+                print('Question: ' + f'{a} * {b}')
                 answer = input('Your answer: ')
                 try:
                     if int(answer) == int(umnozhenie(a, b)):
@@ -71,7 +71,7 @@ def randmath():
                     win_count = 0
                     break
             case 3:
-                print('Question: ' + f' {a} + {b}')
+                print('Question: ' + f'{a} + {b}')
                 answer = input('Your answer: ')
                 try:    
                     if int(answer) == int(plus(a, b)):
