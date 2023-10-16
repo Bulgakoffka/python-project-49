@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 from random import randint
-from brain_games.cli import welcome_user
+# from brain_games.cli import welcome_user
 
-user_name = welcome_user()
+# user_name = welcome_user()
 
+user_name = 'hui'
 
 def check(number):
     if number % 2 == 0:
@@ -15,9 +16,10 @@ def check(number):
 
 def is_even():
     win_count = 0
-    while win_count != 3:
+    while win_count != 4:
         if win_count == 3:
             print('Congratulations, ' + user_name)
+            break
         number = randint(1, 30)
         print('Question: ' + str(number))
         guess_answer = input('Your answer: ')
