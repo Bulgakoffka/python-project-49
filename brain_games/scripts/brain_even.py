@@ -1,7 +1,15 @@
 from random import randint
-from cli import welcome_user
+from brain_games.scripts.cli import welcome_user
 
 user_name = welcome_user()
+
+
+def check(number):
+    if number % 2 == 0:
+        return 'yes'
+    else:
+        return 'no'
+
 
 def is_even():
     win_count = 0
@@ -15,19 +23,24 @@ def is_even():
                 print('Correct!')
                 win_count += 1
             else:
-                print(f"'{guess_answer}' is wrong answer ;(. Correct answer was 'no'. \n Let's try again, {user_name}!")
+                print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
                 win_count = 0
         if guess_answer == 'no':
             if number % 2 != 0:
                 print('Correct!')
                 win_count += 1
             else:
-                print(f"'{guess_answer}' is wrong answer ;(. Correct answer was 'yes'. \n Let's try again, {user_name}!")
+                print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
                 win_count = 0
         if guess_answer != 'yes' and guess_answer != 'no':
-            print(f"'{guess_answer}' is wrong answer ;(. \n Let's try again, {user_name}!")
+            print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
             win_count = 0
         if win_count == 3:
             print('Congratulations, ' + user_name)
 
-is_even()
+def main():
+    is_even()
+
+
+if __name__ == '__main__':
+    main()
