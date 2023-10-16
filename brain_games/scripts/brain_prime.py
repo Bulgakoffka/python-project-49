@@ -24,7 +24,7 @@ def brain_prime():
     win_count = 0
     while win_count != 4:
         if win_count == 3:
-            print('Congratulations, ' + user_name)
+            print('Congratulations, ' + user_name + '!')
             break
         guess_number = randint(1, 30)
         print('Question: ' + str(guess_number))

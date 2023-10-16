@@ -11,7 +11,7 @@ def progression():
     win_count = 0
     while win_count != 4:
         if win_count == 3:
-            print('Congratulations, ' + user_name)
+            print('Congratulations, ' + user_name + '!')
             break
         prog = randint(2, 7)
         length = randint(35, 50)
