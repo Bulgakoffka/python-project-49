@@ -1,5 +1,5 @@
 from random import randint
-from brain_games.scripts.cli import welcome_user
+from cli import welcome_user
 
 user_name = welcome_user()
 
