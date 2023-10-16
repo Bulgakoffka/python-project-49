@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 from random import randint
-# from brain_games.cli import welcome_user
+from brain_games.cli import welcome_user
 
-# user_name = welcome_user()
+user_name = welcome_user()
 
-user_name = 'hui'
+
 
 def check(number):
     if number % 2 == 0:
