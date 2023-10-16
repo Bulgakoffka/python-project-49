@@ -38,7 +38,7 @@ def randmath():
         choice = randint(1, 3)
         a, b = randnumber(), randnumber()
         if win_count == 3:
-            print('Congratulations, ' + user_name)
+            print('Congratulations, ' + user_name + '!')
             break
         match choice:
             case 1:
