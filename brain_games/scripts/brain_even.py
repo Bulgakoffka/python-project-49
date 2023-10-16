@@ -37,9 +37,11 @@ def is_even():
             else:
                 print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
                 win_count = 0
+                break
         if guess_answer != 'yes' and guess_answer != 'no':
             print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
             win_count = 0
+            break
 
 def main():
      print('Answer "yes" if the number is even, otherwise answer "no".')
