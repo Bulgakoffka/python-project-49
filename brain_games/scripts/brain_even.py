@@ -2,9 +2,9 @@
 
 from random import randint
 from brain_games.cli import welcome_user
+from brain_games.misc import lose
 
 user_name = welcome_user()
-
 
 
 def check(number):
@@ -28,25 +28,24 @@ def is_even():
                 print('Correct!')
                 win_count += 1
             else:
-                print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
-                win_count = 0
+                lose(guess_answer, check(number), user_name)
                 break
         if guess_answer == 'no':
             if number % 2 != 0:
                 print('Correct!')
                 win_count += 1
             else:
-                print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
-                win_count = 0
+                lose(guess_answer, check(number), user_name)
                 break
         if guess_answer != 'yes' and guess_answer != 'no':
-            print(f"'{guess_answer}' is wrong answer ;(. Correct answer was '{check(number)}'. \n Let's try again, {user_name}!")
+            lose(guess_answer, check(number), user_name)
             win_count = 0
             break
 
+
 def main():
-     print('Answer "yes" if the number is even, otherwise answer "no".')
-     is_even()
+    print('Answer "yes" if the number is even, otherwise answer "no".')
+    is_even()
 
 
 if __name__ == '__main__':

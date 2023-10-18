@@ -2,6 +2,7 @@
 
 from random import randint
 from brain_games.cli import welcome_user
+from brain_games.misc import lose
 
 
 user_name = welcome_user()
@@ -26,10 +27,6 @@ def umnozhenie(a, b):
 def randnumber():
     a = randint(1, 30)
     return a
-    
-
-
-
 
 
 def randmath():
@@ -49,10 +46,10 @@ def randmath():
                         print('Correct!')
                         win_count += 1
                     else:
-                        print(f"'{answer}' is wrong answer ;(. Correct answer was '{umnozhenie(a, b)}'. Let's try again, {user_name}!")
+                        lose(answer, umnozhenie(a, b), user_name)
                         break
-                except:
-                    print(f"'{answer}' is wrong answer ;(. Correct answer was '{umnozhenie(a, b)}'. \n Let's try again, {user_name}!")
+                except ValueError:
+                    lose(answer, umnozhenie(a, b), user_name)
                     win_count = 0
                     break
             case 2:
@@ -63,26 +60,25 @@ def randmath():
                         print('Correct!')
                         win_count += 1
                     else:
-                        print(
-                            f"'{answer}' is wrong answer ;(. Correct answer was '{minus(a, b)}'. Let's try again, {user_name}!")
+                        lose(answer, minus(a, b), user_name)
                         break
-                except:
-                    print(f"'{answer}' is wrong answer ;(. Correct answer was '{minus(a, b)}'. \n Let's try again, {user_name}!")
+                except ValueError:
+                    lose(answer, minus(a, b), user_name)
                     win_count = 0
                     break
             case 3:
                 print('Question: ' + f'{a} + {b}')
                 answer = input('Your answer: ')
-                try:    
+                try:
                     if int(answer) == int(plus(a, b)):
                         print('Correct!')
                         win_count += 1
                     else:
-                        print(
-                            f"'{answer}' is wrong answer ;(. Correct answer was '{plus(a, b)}'. Let's try again, {user_name}!")
+                        lose(answer, plus(a, b), user_name)
+                        win_count = 0
                         break
-                except:
-                    print(f"'{answer}' is wrong answer ;(. Correct answer was '{plus(a, b)}'. \n Let's try again, {user_name}!")
+                except ValueError:
+                    lose(answer, plus(a, b), user_name)
                     win_count = 0
                     break
 
@@ -90,6 +86,7 @@ def randmath():
 def main():
     print('What is the result of the expression?')
     randmath()
+
 
 if __name__ == '__main__':
     main()

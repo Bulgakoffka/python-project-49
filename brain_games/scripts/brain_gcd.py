@@ -2,10 +2,13 @@
 
 from random import randint
 from brain_games.cli import welcome_user
+from brain_games.misc import lose
+
 
 def randnumber():
     a = randint(1, 30)
     return a
+
 
 user_name = welcome_user()
 
@@ -24,7 +27,6 @@ def calc(a, b):
     return c
 
 
-
 def nod():
     win_count = 0
     while win_count != 4:
@@ -39,19 +41,19 @@ def nod():
                 print('Correct!')
                 win_count += 1
             else:
-                print(f"'{answer}' is wrong answer ;(. Correct answer was '{calc(a, b)}'. \n Let's try again, {user_name}!")
+                lose(answer, calc(a, b), user_name)
                 win_count = 0
                 break
-        except:
-            print(f"'{answer}' is wrong answer ;(. Correct answer was '{calc(a, b)}'. \n Let's try again, {user_name}!")
+        except ValueError:
+            lose(answer, calc(a, b), user_name)
             win_count = 0
             break
-
 
 
 def main():
     print('Find the greatest common divisor of given numbers.')
     nod()
+
 
 if __name__ == '__main__':
     main()

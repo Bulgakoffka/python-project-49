@@ -2,7 +2,7 @@
 
 from random import randint
 from brain_games.cli import welcome_user
-
+from brain_games.misc import lose
 
 user_name = welcome_user()
 
@@ -25,19 +25,16 @@ def progression():
         answer = input('Your answer: ')
         try:
             if int(answer) == int(blanked_number):
-                        print('Correct!')
-                        win_count += 1
+                print('Correct!')
+                win_count += 1
             else:
-                print(f"'{answer}' is wrong answer ;(. Correct answer was '{blanked_number}'. \n Let's try again, {user_name}!")
+                lose(answer, blanked_number, user_name)
                 win_count = 0
                 break
-        except:
-            print(
-                f"'{answer}' is wrong answer ;(. Correct answer was '{blanked_number}'. \n Let's try again, {user_name}!")
+        except ValueError:
+            lose(answer, blanked_number, user_name)
             win_count = 0
             break
-
-
 
 
 def main():

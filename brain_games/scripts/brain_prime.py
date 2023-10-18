@@ -2,9 +2,9 @@
 
 from random import randint
 from brain_games.cli import welcome_user
+from brain_games.misc import lose
 
 user_name = welcome_user()
-
 
 
 def is_prime(number):
@@ -16,8 +16,6 @@ def is_prime(number):
         return 'no'
     else:
         return 'yes'
-
-
 
 
 def brain_prime():
@@ -35,8 +33,7 @@ def brain_prime():
                 print('Correct!')
                 win_count += 1
             else:
-                print(
-                    f"'{guess_answer}' is wrong answer ;(. Correct answer was '{is_prime(guess_number)}'. \n Let's try again, {user_name}!")
+                lose(guess_answer, is_prime(guess_number), user_name)
                 win_count = 0
                 break
         if guess_answer == 'no':
@@ -44,18 +41,12 @@ def brain_prime():
                 print('Correct!')
                 win_count += 1
             else:
-                print(
-                    f"'{guess_answer}' is wrong answer ;(. Correct answer was '{is_prime(guess_number)}'. \n Let's try again, {user_name}!")
-                win_count = 0
+                lose(guess_answer, is_prime(guess_number), user_name)
                 break
         if guess_answer != 'yes' and guess_answer != 'no':
-            print(
-                f"'{guess_answer}' is wrong answer ;(. Correct answer was '{is_prime(guess_number)}'. \n Let's try again, {user_name}!")
+            lose(guess_answer, is_prime(guess_number), user_name)
             win_count = 0
             break
-
-
-
 
 
 def main():
