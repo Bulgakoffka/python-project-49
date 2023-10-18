@@ -24,9 +24,9 @@ def brain_prime():
             print('Congratulations, ' + user_name + '!')
             break
         guess_number, guess_answer = ask_question()
-        if guess_answer == 'yes' and is_prime(guess_answer) == 'yes':
+        if guess_answer == 'yes' and is_prime(guess_number) == 'yes':
             win_count += 1
-        elif guess_answer == 'no' and is_prime(guess_answer) == 'no':
+        elif guess_answer == 'no' and is_prime(guess_number) == 'no':
             print('Correct!')
             win_count += 1
         elif guess_answer != 'yes' and guess_answer != 'no':
