@@ -14,32 +14,32 @@ def check(number):
         return 'no'
 
 
+def ask_question():
+    number = randint(1, 30)
+    print('Question: ' + str(number))
+    guess_answer = input('Your answer: ')
+    return number, guess_answer
+
+
 def is_even():
     win_count = 0
     while win_count != 4:
         if win_count == 3:
             print('Congratulations, ' + user_name + '!')
             break
-        number = randint(1, 30)
-        print('Question: ' + str(number))
-        guess_answer = input('Your answer: ')
-        if guess_answer == 'yes':
-            if number % 2 == 0:
-                print('Correct!')
-                win_count += 1
-            else:
-                lose(guess_answer, check(number), user_name)
-                break
-        if guess_answer == 'no':
-            if number % 2 != 0:
-                print('Correct!')
-                win_count += 1
-            else:
-                lose(guess_answer, check(number), user_name)
-                break
-        if guess_answer != 'yes' and guess_answer != 'no':
+        number, guess_answer = ask_question()
+        if guess_answer == 'yes' and number % 2 == 0:
+            print('Correct!')
+            win_count += 1
+        elif guess_answer == 'no' and number % 2 != 0:
+            print('Correct!')
+            win_count += 1
+        elif guess_answer != 'yes' and guess_answer != 'no':
             lose(guess_answer, check(number), user_name)
             win_count = 0
+            break
+        else:
+            lose(guess_answer, check(number), user_name)
             break
 
 

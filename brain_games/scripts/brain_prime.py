@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-from random import randint
 from brain_games.cli import welcome_user
-from brain_games.misc import lose
+from brain_games.misc import lose, ask_question
 
 user_name = welcome_user()
 
@@ -24,28 +23,18 @@ def brain_prime():
         if win_count == 3:
             print('Congratulations, ' + user_name + '!')
             break
-        guess_number = randint(1, 30)
-        print('Question: ' + str(guess_number))
-        guess_answer = input('Your answer: ')
-
-        if guess_answer == 'yes':
-            if is_prime(guess_number) == 'yes':
-                print('Correct!')
-                win_count += 1
-            else:
-                lose(guess_answer, is_prime(guess_number), user_name)
-                win_count = 0
-                break
-        if guess_answer == 'no':
-            if is_prime(guess_number) == 'no':
-                print('Correct!')
-                win_count += 1
-            else:
-                lose(guess_answer, is_prime(guess_number), user_name)
-                break
-        if guess_answer != 'yes' and guess_answer != 'no':
+        guess_number, guess_answer = ask_question()
+        if guess_answer == 'yes' and is_prime(guess_answer) == 'yes':
+            win_count += 1
+        elif guess_answer == 'no' and is_prime(guess_answer) == 'no':
+            print('Correct!')
+            win_count += 1
+        elif guess_answer != 'yes' and guess_answer != 'no':
             lose(guess_answer, is_prime(guess_number), user_name)
             win_count = 0
+            break
+        else:
+            lose(guess_answer, is_prime(guess_number), user_name)
             break
 
 
