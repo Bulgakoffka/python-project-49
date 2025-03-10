@@ -21,7 +21,7 @@ def prime_game():
 
 
 def main():
-    calc_game()
+    prime_game()
 
 
 if __name__ == '__main__':
