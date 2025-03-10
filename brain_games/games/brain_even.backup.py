@@ -1,7 +1,7 @@
 from prompt import string
 from random import randint
-from brain_games.scripts.brain_games import greeting
-from brain_games.cli import welcome_user
+from brain_games.games.brain_games import greeting
+from ..cli import welcome_user
 
 
 def is_even_game():
