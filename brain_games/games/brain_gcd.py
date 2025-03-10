@@ -2,7 +2,7 @@ from random import randint, choice
 from brain_games.brain_engine.brain_games_engine import brain_engine
 
 
-def calc_game():
+def gcd_game():
     task = 'Find the greatest common divisor of given numbers.'
     def get_expression():
         global int1, int2
@@ -23,7 +23,7 @@ def calc_game():
 
 
 def main():
-    calc_game()
+   gcd_game()
 
 
 if __name__ == '__main__':

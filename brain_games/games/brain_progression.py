@@ -2,7 +2,7 @@ from random import randint
 from brain_games.brain_engine.brain_games_engine import brain_engine
 
 
-def calc_game():
+def progression_game():
     task = 'Find the greatest common divisor of given numbers.'
     def get_expression():
         progression = [(randint(1, 21)), ]
