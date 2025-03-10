@@ -41,7 +41,7 @@ def progression_game():
 
 
 def main():
-    calc_game()
+    progression_game()
 
 
 if __name__ == '__main__':

@@ -9,3 +9,6 @@ package-install:
 
 package-reinstall:
 	uv tool install --force dist/*.whl
+
+lint:
+	uv run ruff check brain_games

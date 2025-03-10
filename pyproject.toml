@@ -7,7 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "asciinema>=2.4.0",
     "prompt>=0.4.1",
-    "tool>=0.8.0",
 ]
 
 
@@ -17,6 +16,11 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["brain_games"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.10",
+]
 
 [project.scripts]
 brain-games = "brain_games.games.brain_games:main"
