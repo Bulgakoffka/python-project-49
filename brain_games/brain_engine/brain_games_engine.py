@@ -4,6 +4,7 @@ from brain_games.cli import welcome_user
 
 
 def brain_engine(task, get_expression, correct_answer):
+    greeting()
     name = welcome_user()
     win_count = 0
     print(task)
@@ -17,7 +18,6 @@ def brain_engine(task, get_expression, correct_answer):
         else:
             print(f"'{user_answer}' is wrong answer ;(. "
                   f"Correct answer was {correct_answer(cycle_gexp)}")
-            win_count = 0
             print(f"Let's try again, {name}!")
             return None
     print(f'Congratulations, {name}!')
