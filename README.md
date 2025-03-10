@@ -1,2 +1,3 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/cc48e2221afe26476e02/maintainability)](https://codeclimate.com/github/Bulgakoffka/python-project-49/maintainability)
 [![asciicast](https://asciinema.org/a/ls7GXGJPR36JeF50FSCEY4Jxv.svg)](https://asciinema.org/a/ls7GXGJPR36JeF50FSCEY4Jxv)
 [![asciicast](https://asciinema.org/a/RSg1DTn4PjBnBvJbotEyoDHZG.svg)](https://asciinema.org/a/RSg1DTn4PjBnBvJbotEyoDHZG)
