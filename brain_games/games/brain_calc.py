@@ -3,7 +3,7 @@ from brain_games.brain_engine.brain_games_engine import brain_engine
 
 
 def calc_game():
-    task = 'Answer "yes" if the number is even, otherwise answer "no".'
+    task = 'What is the result of the expression?'
     def get_expression():
         operator_list = ['+', '-', '*']
         int1 = randint(1, 51)
