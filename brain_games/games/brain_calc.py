@@ -1,9 +1,11 @@
-from random import randint, choice
+from random import choice, randint
+
 from brain_games.brain_engine.brain_games_engine import brain_engine
 
 
 def calc_game():
     task = 'What is the result of the expression?'
+
     def get_expression():
         operator_list = ['+', '-', '*']
         int1 = randint(1, 51)
@@ -11,12 +13,10 @@ def calc_game():
         global expression
         expression = f'{int1} {choice(operator_list)} {int2}'
         return expression
+    
     def correct_answer(exp):
         return eval(exp)
     brain_engine(task, get_expression, correct_answer)
-
-
-
 
 
 def main():

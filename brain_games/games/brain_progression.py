@@ -1,9 +1,11 @@
 from random import randint
+
 from brain_games.brain_engine.brain_games_engine import brain_engine
 
 
 def progression_game():
     task = 'Find the greatest common divisor of given numbers.'
+    
     def get_expression():
         progression = [(randint(1, 21)), ]
         progression_length = randint(5, 11)
@@ -15,9 +17,8 @@ def progression_game():
 
         hide_index = randint(0, len(progression) - 1)
         progression[hide_index] = '..'
-        return (str(progression).replace('[', '').replace(']', '').replace(',', '')
-                .replace('\'', ''))
-
+        return (str(progression).replace('[', '').replace(']', '')
+                .replace(',', '').replace('\'', ''))
 
     def correct_answer(hidden_progression):
         progression_list = []
@@ -37,7 +38,6 @@ def progression_game():
                 next_i = progression_list[progression_list.index(i) + 1]
                 return int(next_i) - int(common_difference)
     brain_engine(task, get_expression, correct_answer)
-
 
 
 def main():

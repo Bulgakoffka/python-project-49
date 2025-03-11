@@ -1,6 +1,7 @@
 from prompt import string
-from brain_games.games.brain_games import greeting
+
 from brain_games.cli import welcome_user
+from brain_games.games.brain_games import greeting
 
 
 def brain_engine(task, get_expression, correct_answer):
@@ -21,11 +22,6 @@ def brain_engine(task, get_expression, correct_answer):
             print(f"Let's try again, {name}!")
             return None
     print(f'Congratulations, {name}!')
-
-
-
-
-
 
 
 if __name__ == '__main__':
