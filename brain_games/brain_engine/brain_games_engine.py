@@ -11,7 +11,7 @@ def brain_engine(task, get_expression, correct_answer):
     print(task)
     while win_count < 3:
         cycle_gexp = get_expression()
-        print(cycle_gexp)
+        print(f'Question: {cycle_gexp}')
         user_answer = string('Your answer: ')
         if str(user_answer) == str(correct_answer(cycle_gexp)):
             print('Correct!')
