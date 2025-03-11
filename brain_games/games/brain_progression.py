@@ -4,7 +4,7 @@ from brain_games.brain_engine.brain_games_engine import brain_engine
 
 
 def progression_game():
-    task = 'Find the greatest common divisor of given numbers.'
+    task = 'What number is missing in the progression?'
     
     def get_expression():
         progression = [(randint(1, 21)), ]
