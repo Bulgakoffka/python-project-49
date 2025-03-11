@@ -17,7 +17,7 @@ def gcd_game():
         int1, int2 = expression.split()
         gcd = 1
         int1, int2 = int(int1), int(int2)
-        for i in range(1, int1 if int1 > int2 else int2):
+        for i in range(1, (int1 if int1 > int2 else int2) + 1):
             statement = int1 % i == 0 and int2 % i == 0
             if statement:
                 gcd = i
