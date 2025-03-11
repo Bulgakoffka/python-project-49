@@ -34,7 +34,8 @@ def progression_game():
             if i == '..' and progression_list.index(i) != 0:
                 previous_i = progression_list[progression_list.index(i) - 1]
                 return int(previous_i) + int(common_difference)
-            elif i == '..' and progression_list.index(i) < len(progression_list) - 1:
+            elif (i == '..' and progression_list.index(i) < len
+                (progression_list) - 1):
                 next_i = progression_list[progression_list.index(i) + 1]
                 return int(next_i) - int(common_difference)
     brain_engine(task, get_expression, correct_answer)
