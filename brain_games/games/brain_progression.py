@@ -30,8 +30,10 @@ def progression_game():
             str_progression.append(str(i))
 
         symmetric_difference = list((set(str_progression)
-                                ^ set(hidden_progression_list)))[1]
-        return symmetric_difference
+                                ^ set(hidden_progression_list)))
+        for i in symmetric_difference:
+            if i != '..':
+                return int(i)
 
     brain_engine(task, get_expression, correct_answer)
 
