@@ -16,14 +16,22 @@ def progression_game():
             next_term = progression[-1] + common_difference
             progression.append(next_term)
 
+        hidden_progression = progression.copy()
         hide_index = randint(0, len(progression) - 1)
-        progression[hide_index] = '..'
-        return (str(progression).replace('[', '').replace(']', '')
+        hidden_progression[hide_index] = '..'
+        return (str(hidden_progression).replace('[', '').replace(']', '')
                 .replace(',', '').replace('\'', ''))
 
     def correct_answer(hidden_progression):
-        hidden_number = sorted((set(progression) ^ set(hidden_progression)))[1]
-        return hidden_number
+        hidden_progression_list = hidden_progression.split()
+        str_progression = []
+
+        for i in progression:
+            str_progression.append(str(i))
+
+        symmetric_difference = list((set(str_progression)
+                                ^ set(hidden_progression_list)))[1]
+        return symmetric_difference
 
     brain_engine(task, get_expression, correct_answer)
 
