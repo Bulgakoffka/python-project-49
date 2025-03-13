@@ -1,7 +1,7 @@
 from math import sqrt
 from random import randint
 
-from brain_games.scriptsuv .brain_games_engine import brain_engine
+from brain_games.scripts.brain_games_engine import brain_engine
 
 
 def prime_game():
