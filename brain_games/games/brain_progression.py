@@ -1,12 +1,13 @@
 from random import randint
 
-from brain_games.brain_engine.brain_games_engine import brain_engine
+from brain_games.scripts.brain_games_engine import brain_engine
 
 
 def progression_game():
     task = 'What number is missing in the progression?'
     
     def get_expression():
+        global progression
         progression = [(randint(1, 21)), ]
         progression_length = randint(5, 11)
         common_difference = randint(1, 10)
@@ -21,23 +22,9 @@ def progression_game():
                 .replace(',', '').replace('\'', ''))
 
     def correct_answer(hidden_progression):
-        progression_list = []
-        common_difference = 0
-        for term in hidden_progression.split():
-            progression_list.append(term)
-        for i in progression_list[:-1]:
-            next_i = progression_list[progression_list.index(i) + 1]
-            if i != '..' and next_i != '..':
-                common_difference = int(next_i) - int(i)
-                break
-        for i in progression_list:
-            if i == '..' and progression_list.index(i) != 0:
-                previous_i = progression_list[progression_list.index(i) - 1]
-                return int(previous_i) + int(common_difference)
-            elif (i == '..' and progression_list.index(i) < len
-                (progression_list) - 1):
-                next_i = progression_list[progression_list.index(i) + 1]
-                return int(next_i) - int(common_difference)
+        hidden_number = sorted((set(progression) ^ set(hidden_progression)))[1]
+        return hidden_number
+
     brain_engine(task, get_expression, correct_answer)
 
 

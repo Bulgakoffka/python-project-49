@@ -1,6 +1,6 @@
 from random import randint
 
-from brain_games.brain_engine.brain_games_engine import brain_engine
+from brain_games.scripts.brain_games_engine import brain_engine
 
 
 def is_even_game():

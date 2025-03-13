@@ -1,6 +1,7 @@
+from math import sqrt
 from random import randint
 
-from brain_games.brain_engine.brain_games_engine import brain_engine
+from brain_games.scriptsuv .brain_games_engine import brain_engine
 
 
 def prime_game():
@@ -12,7 +13,9 @@ def prime_game():
         return expression
     
     def correct_answer(expression):
-        for i in range(1, expression):
+        if expression == 1:
+            return 'no'
+        for i in range(1, sqrt(expression)):
             if i != 1 and expression % i == 0:
                 return 'no'
         return 'yes'
