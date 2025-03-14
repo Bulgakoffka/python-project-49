@@ -15,7 +15,7 @@ def prime_game():
     def correct_answer(expression):
         if expression == 1:
             return 'no'
-        for i in range(1, int(sqrt(expression) + 1)):
+        for i in range(2, int(sqrt(expression) + 1)):
             if i != 1 and expression % i == 0:
                 return 'no'
         return 'yes'
